@@ -23,4 +23,12 @@ public abstract class Unit extends Alpha {
         }
     }
     
+    public void setVulnerable(boolean vulnerable){
+        this.vulnerable = vulnerable;
+    }
+    
+    public boolean getVulnerable(){
+        return this.vulnerable;
+    }
+    
 }

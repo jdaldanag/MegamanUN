@@ -12,7 +12,7 @@ public class Player extends Unit {
     }
     
     public void shoot(){
-        Bullet fire = new Bullet(this.getX() - 1,this.getY(),this.getWidth(),this.getHeight(),this.getDamage(), -1);
+        Bullet fire = new Bullet(this.getX() - 1, this.getY(), 40, 50, this.getDamage(), -1);
     }
     
     public void draw(Graphics graphics){
