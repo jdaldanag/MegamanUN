@@ -7,11 +7,9 @@ public abstract class Alpha {
     private int x;
     private int y;
     
-    public Alpha(int x,int y,int width, int height){
+    public Alpha(int x,int y){
         this.x = x;
         this.y = y;
-        this.w = width;
-        this.h = height;
     }
        
     public int getX(){
@@ -24,6 +22,14 @@ public abstract class Alpha {
     
     public int getWidth(){
         return this.w;
+    }
+    
+    public void setWidth(int width){
+        this.w = width;
+    }
+    
+    public void setHeigh(int heigh){
+        this.h = heigh;
     }
     
     public int getHeight(){

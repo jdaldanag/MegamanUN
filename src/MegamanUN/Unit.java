@@ -6,8 +6,8 @@ public abstract class Unit extends Alpha {
     private int damage;
     private boolean alive = true;
     
-    public Unit(int x,int y,int width,int height,int life,int damage){
-        super(x,y,width,height);
+    public Unit(int x,int y,int life,int damage){
+        super(x,y);
         this.life = life;
         this.damage = damage;
     }

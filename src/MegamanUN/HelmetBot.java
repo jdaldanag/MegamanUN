@@ -3,12 +3,14 @@ import java.awt.*;
 
 public class HelmetBot extends Unit implements Runnable {
     
-    public HelmetBot(int x,int y,int width,int height,int life,int damage){
-        super(x,y,width,height,life,damage);    
+    public HelmetBot(int x,int y,int life,int damage){
+        super(x,y,life,damage);
+        this.setWidth(60);
+        this.setHeigh(60);
     }
     
     public void shoot(){
-        Bullet fire = new Bullet(this.getX() - 1,this.getY(), 40, 50, this.getDamage(), -1);
+        Bullet fire = new Bullet(this.getX() - (this.getWidth()/2),this.getY(), this.getDamage(), -1);
     }
     
     public void shield(){
@@ -21,6 +23,7 @@ public class HelmetBot extends Unit implements Runnable {
     }
     
     public void draw(Graphics graphics){
+        graphics.setColor(Color.YELLOW);
         graphics.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
     }
     

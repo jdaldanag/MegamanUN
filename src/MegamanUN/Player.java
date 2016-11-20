@@ -3,8 +3,10 @@ import java.awt.*;
 
 public class Player extends Unit {
     
-    public Player(int x,int y,int width,int height,int life,int damage){
-        super(x,y,width,height,life,damage);    
+    public Player(int x,int y,int life,int damage){
+        super(x,y,life,damage);    
+        this.setWidth(60);
+        this.setWidth(90);
     }
     
     public void jump(){
@@ -12,10 +14,11 @@ public class Player extends Unit {
     }
     
     public void shoot(){
-        Bullet fire = new Bullet(this.getX() - 1, this.getY(), 40, 50, this.getDamage(), -1);
+        Bullet fire = new Bullet(this.getX() - 1, this.getY(), this.getDamage(), -1);
     }
     
     public void draw(Graphics graphics){
+        graphics.setColor(Color.CYAN);
         graphics.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
     }
     
