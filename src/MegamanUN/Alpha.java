@@ -20,6 +20,14 @@ public abstract class Alpha {
         return this.y;
     }
     
+    public int getGridX(){
+        return this.x / 80;
+    }
+    
+    public int getGridY(){
+        return this.y / 80;
+    }
+    
     public int getWidth(){
         return this.w;
     }
@@ -28,7 +36,7 @@ public abstract class Alpha {
         this.w = width;
     }
     
-    public void setHeigh(int heigh){
+    public void setHeight(int heigh){
         this.h = heigh;
     }
     
@@ -36,13 +44,8 @@ public abstract class Alpha {
         return this.h;
     }
     
-    public boolean Occupied(int x,int y){
-        if(this.x == x && this.y == y){
-            return true;
-        }
-        else {
-            return false;
-        }
+    public boolean Occupied(){
+        return true;
     }
     
     public void moveX(int mx){
@@ -52,6 +55,8 @@ public abstract class Alpha {
     public void moveY(int my){
         this.y = this.y + my;
     }
+    
+    public abstract boolean enemy();
         
     public abstract void draw(Graphics graphics);
 

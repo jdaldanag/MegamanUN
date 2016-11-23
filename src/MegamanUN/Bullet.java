@@ -9,7 +9,7 @@ public class Bullet extends Alpha {
         super(x,y);
         this.damage = damage;
         this.direction = direction;
-        this.setHeigh(40);
+        this.setHeight(40);
         this.setWidth(40);
     }
     
@@ -20,5 +20,9 @@ public class Bullet extends Alpha {
     public void draw(Graphics graphics){
         graphics.setColor(Color.ORANGE);
         graphics.fillOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
+    }
+    
+    public boolean enemy(){
+        return false;
     }
 }

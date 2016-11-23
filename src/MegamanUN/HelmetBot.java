@@ -6,11 +6,7 @@ public class HelmetBot extends Unit implements Runnable {
     public HelmetBot(int x,int y,int life,int damage){
         super(x,y,life,damage);
         this.setWidth(60);
-        this.setHeigh(60);
-    }
-    
-    public void shoot(){
-        Bullet fire = new Bullet(this.getX() - (this.getWidth()/2),this.getY(), this.getDamage(), -1);
+        this.setHeight(60);
     }
     
     public void shield(){
@@ -28,23 +24,17 @@ public class HelmetBot extends Unit implements Runnable {
     }
     
     public void run(){
-        this.shoot();
-        try{
-            this.wait(1000);
+        while (true){
+            this.shield();
+            for(int i = 0; i < 120; i++){
+                try {
+                    this.wait();
+                } catch(Exception e){ }    
+            }        
         }
-        catch(InterruptedException x){            
-        }
-        this.shield();
-        try{
-            this.wait(3000);
-        }
-        catch(InterruptedException x){            
-        }
-        this.shield();
-        try{
-            this.wait(1000);
-        }
-        catch(InterruptedException x){            
-        }
+    }    
+    
+    public boolean enemy(){
+        return true;
     }
 }

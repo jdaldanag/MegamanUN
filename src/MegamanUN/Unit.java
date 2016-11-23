@@ -1,6 +1,6 @@
 package MegamanUN;
 
-public abstract class Unit extends Alpha {
+public abstract class Unit extends Alpha implements Runnable {
     private int life;
     private boolean vulnerable;
     private int damage;
@@ -30,5 +30,7 @@ public abstract class Unit extends Alpha {
     public boolean getVulnerable(){
         return this.vulnerable;
     }
+    
+    public abstract void run();
     
 }
